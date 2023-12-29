@@ -1,8 +1,16 @@
-name: lint
+name: Build Workflow
 
-on: [push, pull_request]
+on:
+  workflow_call:
 
 jobs:
-  check-formatting:
-    name: Check formatting
-    uses: khulnasoft/workflows/.github/workflows/lint.yml@master
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Add your build steps here
+      - name: Check formatting
+        uses: khulnasoft/workflows/.github/workflows/lint.yml@master
