@@ -1,4 +1,4 @@
-"""Linting checker and formatter for ivy coding and docstring styles."""
+"""Linting checker and formatter for startai coding and docstring styles."""
 
 import sys
 import argparse
@@ -11,7 +11,7 @@ FORMATTERS = (FunctionOrderingFormatter,)
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        prog="ivy-lint",
+        prog="startai-lint",
         description=__doc__,
     )
 
@@ -25,7 +25,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main():
-    """Entrypoint of ivy-lint."""
+    """Entrypoint of startai-lint."""
     args = parse_args()
 
     filenames = list(set(args.filenames))

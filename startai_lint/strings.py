@@ -1,4 +1,4 @@
-"""String utilities for ivy_lint."""
+"""String utilities for startai_lint."""
 
 
 def find_closing_parentheses(string: str, start: int) -> int:

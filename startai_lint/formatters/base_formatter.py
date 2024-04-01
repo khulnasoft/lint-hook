@@ -1,11 +1,11 @@
-"""Base Ivy formatter."""
+"""Base Startai formatter."""
 
 from abc import ABC, abstractmethod
 from typing import List
 
 
 class BaseFormatter(ABC):
-    """Base formatter for ivy style."""
+    """Base formatter for startai style."""
 
     def __init__(self, filenames: List[str]) -> None:
         self.filenames = filenames

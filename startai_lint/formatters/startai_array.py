@@ -1,18 +1,18 @@
-"""Docstring formatter for fixing ivy.array output style."""
+"""Docstring formatter for fixing startai.array output style."""
 
 import re
 
 import black
 
-from ivy_lint.formatters import BaseDocstringFormatter
-from ivy_lint.strings import find_closing_parentheses
+from startai_lint.formatters import BaseDocstringFormatter
+from startai_lint.strings import find_closing_parentheses
 
 
-class IvyArrayDocstringFormatter(BaseDocstringFormatter):
+class StartaiArrayDocstringFormatter(BaseDocstringFormatter):
     """
-    Docstring formatter for fixing ivy.array output style.
+    Docstring formatter for fixing startai.array output style.
 
-    It checks for code examples that have `ivy.array` as it's output and
+    It checks for code examples that have `startai.array` as it's output and
     formats its content to be more readable.
     """
 
@@ -28,19 +28,19 @@ class IvyArrayDocstringFormatter(BaseDocstringFormatter):
         del partitions[2::3]
 
         for i in range(2, len(partitions), 2):
-            # ivy.array should exist somewhere in the output
+            # startai.array should exist somewhere in the output
             # The output is not seperated by a blank line from the input
             if partitions[i].startswith("\n"):
                 continue
 
             output = partitions[i].split("\n\n", 1)[0]
-            if "ivy.array(" not in output:
+            if "startai.array(" not in output:
                 continue
 
             new_output_parts = []
             pointer = 0
             while pointer < len(partitions[i]):
-                found = partitions[i].find("ivy.array(", pointer)
+                found = partitions[i].find("startai.array(", pointer)
                 comment = partitions[i].find("\n\n", pointer)
                 if found == -1 or (comment != -1 and found > comment):
                     new_output_parts.append(partitions[i][pointer:])

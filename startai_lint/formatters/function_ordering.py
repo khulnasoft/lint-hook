@@ -6,15 +6,15 @@ import sys
 
 import black
 
-from ivy_lint.formatters import BaseFormatter
+from startai_lint.formatters import BaseFormatter
 
 HEADER_PATTERN = re.compile(
     r"#\s?(-{0,3})\s?(Helpers|Main|API"
     r" Functions)\s?(-{0,3})\s?#\n#\s?(-{7,15})\s?#\n(?:\s*\n)*"
 )
 FILE_PATTERN = re.compile(
-    r"(ivy/functional/frontends/(?!.*(?:config\.py|__init__\.py)$).*"
-    r"|ivy_tests/test_ivy/(?!.*(?:__init__\.py|conftest\.py|helpers/.*|test_frontends/config/.*$)).*)"
+    r"(startai/functional/frontends/(?!.*(?:config\.py|__init__\.py)$).*"
+    r"|startai_tests/test_startai/(?!.*(?:__init__\.py|conftest\.py|helpers/.*|test_frontends/config/.*$)).*)"
 )
 
 

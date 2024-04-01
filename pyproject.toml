@@ -1,22 +1,22 @@
 [tool.poetry]
 name = "lint-hook"
 version = "1.0.0"
-description = "Linting checker and formatter for ivy coding and docstring styles"
-authors = ["Ivy Team <ivydl.team@gmail.com>"]
+description = "Linting checker and formatter for startai coding and docstring styles"
+authors = ["Startai Team <startaidl.team@gmail.com>"]
 license = "Apache 2.0"
 readme = "README.rst"
-homepage = "https://github.com/unifyai/lint-hook"
-repository = "https://github.com/unifyai/lint-hook"
-packages = [{include = "ivy_lint"}]
+homepage = "https://github.com/khulnasoft/lint-hook"
+repository = "https://github.com/khulnasoft/lint-hook"
+packages = [{include = "startai_lint"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 untokenize = "^0.1.1"
-black = "^24.3.0"
+black = "^23.3.0"
 networkx = "^3.0"
 
 [tool.poetry.scripts]
-ivy-lint = "ivy_lint.__main__:main"
+startai-lint = "startai_lint.__main__:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
